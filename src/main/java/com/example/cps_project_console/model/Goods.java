@@ -5,7 +5,7 @@ public class Goods extends ShoppingList {
     private String name;
     private String description;
     private double estPrice;
-    private static double actPrice;
+    private double actPrice;
 
     public Goods(){
 
