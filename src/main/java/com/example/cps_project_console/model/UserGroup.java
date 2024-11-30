@@ -9,7 +9,6 @@ public class UserGroup {
     private List<Goods> goodsList;
     private double estimatedTotalCost;
 
-    // Приватный конструктор
     private UserGroup(Builder builder) {
         this.groupName = builder.groupName;
         this.participants = builder.participants;
@@ -17,7 +16,6 @@ public class UserGroup {
         this.estimatedTotalCost = builder.estimatedTotalCost;
     }
 
-    // Геттеры
     public String getGroupName() {
         return groupName;
     }
@@ -44,33 +42,28 @@ public class UserGroup {
                 '}';
     }
 
-    // Вложенный класс Builder
     public static class Builder {
         private String groupName;
         private List<User> participants = new ArrayList<>();
         private List<Goods> goodsList = new ArrayList<>();
         private double estimatedTotalCost = 0.0;
 
-        // Устанавливаем имя группы
         public Builder withGroupName(String groupName) {
             this.groupName = groupName;
             return this;
         }
 
-        // Добавляем участника
         public Builder addParticipant(User user) {
             this.participants.add(user);
             return this;
         }
 
-        // Добавляем товар
         public Builder addGoods(Goods goods) {
             this.goodsList.add(goods);
             this.estimatedTotalCost += goods.getEstPrice();
             return this;
         }
 
-        // Создаем объект UserGroup
         public UserGroup build() {
             return new UserGroup(this);
         }
