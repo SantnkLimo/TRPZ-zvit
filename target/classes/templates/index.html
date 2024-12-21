@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Колективні Покупки</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .hero {
+            background: #007bff;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .feature-card {
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+<header class="bg-dark text-white py-3">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 class="h4">Колективні Покупки</h1>
+            <nav>
+                <a href="#features" class="text-white mx-2">Особливості</a>
+                <a href="#about" class="text-white mx-2">Про Нас</a>
+                <a href="#contact" class="text-white mx-2">Контакти</a>
+                <a href="/register" class="btn btn-light mx-2" sec:authorize="isAnonymous()">Реєстрація</a>
+                <a href="/login" class="btn btn-light mx-2" sec:authorize="isAnonymous()">Увійти</a>
+                <a href="/dashboard" class="btn btn-light mx-2" sec:authorize="isAuthenticated()">Профіль</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>Зручні спільні покупки для всіх!</h1>
+        <p>Створюйте списки покупок, діліться з друзями та слідкуйте за витратами разом.</p>
+        <a href="#features" class="btn btn-light btn-lg">Дізнатися більше</a>
+        <a href="/goods" class="btn btn-light mx-2">Товари</a>
+        </div>
+</section>
+
+<section id="features" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Особливості</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card feature-card p-3 text-center">
+                    <h3>Створення списків</h3>
+                    <p>Збирайте товари в зручні списки, доступні всім учасникам.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card p-3 text-center">
+                    <h3>Облік витрат</h3>
+                    <p>Додавайте чеки, щоб завжди знати, хто і скільки витратив.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card p-3 text-center">
+                    <h3>Побажання</h3>
+                    <p>Ведіть списки бажань, які можуть бачити ваші друзі.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Про Нас</h2>
+        <p class="text-center">Ми команда, яка прагне зробити покупки простішими та зручнішими для кожного. Наша система допомагає вам економити час, гроші та уникати плутанини.</p>
+    </div>
+</section>
+
+<footer id="contact" class="bg-dark text-white py-3">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <p class="mb-0">&copy; 2024 Колективні Покупки. Всі права захищено.</p>
+            <a href="mailto:support@kolpokupky.com" class="text-white">Напишіть нам</a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

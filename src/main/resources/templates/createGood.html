@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Створення нового товару</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="bg-dark text-white py-3">
+  <div class="container">
+    <h1 class="h4">Колективні Покупки</h1>
+    <nav>
+      <a href="/" class="text-white mx-2">Головна</a>
+      <a href="/dashboard" class="text-white mx-2">Профіль</a>
+    </nav>
+  </div>
+</header>
+
+<section class="container py-5">
+  <h2 class="mb-4">Створити новий товар</h2>
+  <form action="/create-goods" method="POST">
+    <div class="mb-3">
+      <label for="Name" class="form-label">Назва товару</label>
+      <input type="text" class="form-control" id="Name" name="Name" required>
+    </div>
+    <div class="mb-3">
+      <label for="Description" class="form-label">Опис товару</label>
+      <textarea class="form-control" id="Description" name="Description" rows="3" required></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="estPrice" class="form-label">Ціна</label>
+      <input type="number" class="form-control" id="estPrice" name="estPrice" step="0.01" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Створити товар</button>
+  </form>
+</section>
+
+<footer class="bg-dark text-white py-3 mt-5">
+  <div class="container">
+    <p class="mb-0">&copy; 2024 Колективні Покупки. Всі права захищено.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

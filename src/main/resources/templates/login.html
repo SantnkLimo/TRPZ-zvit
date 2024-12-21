@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Логін - Колективні Покупки</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .login-container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .hero {
+      background: #007bff;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header class="bg-dark text-white py-3">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <h1 class="h4">Колективні Покупки</h1>
+      <nav>
+        <a href="#features" class="text-white mx-2">Особливості</a>
+        <a href="#about" class="text-white mx-2">Про Нас</a>
+        <a href="#contact" class="text-white mx-2">Контакти</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Логін до системи</h1>
+    <p>Введіть свої дані для входу в систему</p>
+  </div>
+</section>
+
+<div class="login-container">
+  <h3 class="text-center mb-4">Вхід</h3>
+  <form action="/login" method="POST">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="username" required>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Пароль</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+
+    <div class="alert alert-danger" th:if="${param.error}" role="alert">
+      Невірний email або пароль.
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <button type="submit" class="btn btn-primary">Увійти</button>
+      <a href="/register" class="btn btn-link">Реєстрація</a>
+    </div>
+  </form>
+</div>
+
+<footer class="bg-dark text-white py-3 mt-5">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <p class="mb-0">&copy; 2024 Колективні Покупки. Всі права захищено.</p>
+      <a href="mailto:Santnk3@gmail.com" class="text-white">Напишіть нам</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
